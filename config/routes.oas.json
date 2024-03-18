@@ -69,7 +69,8 @@
         ],
         "requestBody": {
           "$ref": "#/components/requestBodies/Pet"
-        }
+        },
+        "x-internal": false
       },
       "put": {
         "tags": [
@@ -180,7 +181,22 @@
               "read:pets"
             ]
           }
-        ]
+        ],
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "urlForwardHandler",
+            "module": "$import(@zuplo/runtime)",
+            "options": {
+              "baseUrl": "http://petstore.swagger.io/v2"
+            }
+          },
+          "policies": {
+            "inbound": [
+              "rate-limit-inbound"
+            ]
+          }
+        }
       }
     },
     "/pet/findByTags": {
