@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: adrian-api
+  annotations:
+    github.com/project-slug: AdrianMachado/adrian-api
+spec:
+  type: other
+  lifecycle: unknown
+  owner: guests
