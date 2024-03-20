@@ -1,10 +1,13 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: API
 metadata:
   name: adrian-api
   annotations:
     github.com/project-slug: AdrianMachado/adrian-api
 spec:
-  type: other
-  lifecycle: unknown
+  type: openapi
+  lifecycle: experimental
   owner: guests
+  system: examples
+  definition:
+    $openapi: https://adrian-api-main-48381b2.zuplo.app/openapi
